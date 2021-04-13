@@ -1,12 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React, {useEffect, useState} from 'react'
 import tmdb from './tmdb'
-import movierow from './components/movierow'
+import Movielist from './components/movierow'
 
 
 export default () => {
 
-  const [movielist, setmovielist] = useState([])
+  const [Movielist, setmovielist] = useState([])
 
   useEffect(()=>{
     const loadAll = async () => {
@@ -22,9 +22,9 @@ export default () => {
   return (
     <div className='page'>
       <section className='list'>
-        {movielist.map((item,key)=>
+        {Movielist.map((item,key)=>
         <div>
-          <movierow key={key}/>
+          <movierow key={key} title= {item.title} itens={item.itens}/>
         </div>
         )}
       </section>
